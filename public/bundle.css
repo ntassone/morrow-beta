@@ -1,0 +1,32 @@
+@import url(http://fonts.googleapis.com/css?family=Asap:400,700);
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  background: #24242A;
+  font-family: "Asap", "Helvetica Neue", sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  color: #fff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+}
