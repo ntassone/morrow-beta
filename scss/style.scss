@@ -18,7 +18,7 @@ body {
 
 * {
   box-sizing: border-box;
-  webkit-font-smoothing: antialiased;
+  -webkit-font-smoothing: antialiased;
 }
 
 img {
@@ -78,53 +78,300 @@ p {
   margin-bottom: 2em;
 
   .msg {
+    position: relative;
     margin-top: 1em;
     margin-bottom: 1em;
     display: inline-block;
     clear: both;
-    float: left;
-    font-size: .9em;
+    padding: .5em .7em;
+    border-radius: $border-rad;
+
+    &:before,
+    &:after {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 10px;
+    }
 
     &.to {
       float: left;
       background: $orange;
+      font-weight: $font-medium;
+
+      &:before {
+        left: -10px;
+        @include triangle(21px, fade-out($orange, .5), left);
+      }
     }
 
     &.from {
       float: right;
+
+      &:before {
+        right: -10px;
+        @include triangle(21px, fade-out(#aaa, .9), right);
+      }
     }
 
     &.from,
     &.project {
-      background: fade-out(#fff, .8);
+      background: fade-out(#fff, .9);
     }
 
+    small {
+      display: block;
+      margin: .2em 0;
+      color: $white-faded;
 
-
+      &:first-of-type {
+        margin-top: .5em;
+      }
+    }
   }
+
+  .project {
+    padding: 1em;
+    padding-left: 55px;
+    padding-right: 1.5em;
+  }
+
+  .project-tab {
+    position: absolute;
+    display: block;
+    left: 0;
+    width: 40px;
+    height: 30px;
+    padding: 5px 0;
+    text-align: center;
+    @include linear-gradient(to right, darken(saturate($yellow, 25%), 10%), $yellow);
+    border-radius: 0 $border-rad $border-rad 0;
+
+    > span {
+      display: inline-block;
+      width: 17px;
+      height: 17px;
+      @include retina-image(images/icon/time, 38px 29px);
+    }
+  }
+}
+
+input,
+button {
+  font-size: 1em;
+  font-family: $font;
+}
+
+button {
+  font-weight: $font-bold;
 }
 
 .sign-up {
   @include linear-gradient(to right, #27283A, #303632);
 
-  input,
+  form {
+    @include span-columns(10);
+    @include shift(1);
+    padding: 2em 1em 3em;
+  }
+
+  header {
+    font-size: $font-size/1.25;
+    text-align: center;
+    margin: .5em 0 2em 0;
+
+    * {
+      margin: 0;
+    }
+
+    h3 {
+      font-weight: $font-light;
+      margin-top: .25em;
+      color: $white-faded;
+    }
+  }
+
+  input[type="email"] {
+    @include span-columns(7);
+    padding: 1em;
+  }
+
   button {
-    font-size: 1em;
+    @include span-columns(5);
+    margin-bottom: 0;
+    margin-top: -1px;
+    padding: 1em 0;
+    cursor: pointer;
   }
 }
 
 input[type="text"],
 input[type="email"] {
-  background: none;
   border: 0;
-  border-bottom: 1px solid fade-out(#fff, .8);
+  border-radius: $border-rad;
+  background: fade-out(#fff, .9);
+  @include transition(.2s ease-in-out);
+
+  &:focus {
+    outline: none;
+    color: #fff;
+  }
 }
 
 button {
   background: $green;
   -webkit-appearance: none;
   border: 0;
+  border-bottom: 3px solid darken($green, 15%);
   border-radius: $border-rad;
   color: white;
+  @include transition(.2s ease-in-out);
+
+  &:hover {
+    background: darken($green, 5%);
+  }
+
+  &:active,
+  &:focus {
+    outline: none;
+  }
 }
 
+.values {
+
+  .props {
+    margin: 2em auto;
+
+    > div {
+      @include span-columns(4);
+      text-align: center;
+      p {
+        font-weight: $font-bold;
+      }
+    }
+
+    .purple {
+      color: $purple-text;
+    }
+
+    .orange {
+      color: $orange-text;
+    }
+
+    .blue {
+      color: $blue-text;
+    }
+  }
+
+}
+
+blockquote {
+
+  .avatar {
+    float: left;
+    border-radius: $border-rad/2;
+    overflow: hidden;
+    margin-right: 2em;
+
+    img {
+      display: block;
+    }
+  }
+
+  .quote {
+    padding: .5em 2em;
+
+    p {
+      margin: 0 0 .5em 0;
+      font-size: 1.3em;
+    }
+
+  }
+
+  cite {
+    color: $green;
+    font-weight: $font-bold;
+  }
+
+  .testimonial & {
+    padding: 1em;
+    margin-top: 3em;
+    margin-bottom: 0;
+    border: 2px solid fade-out(#fff, .9);
+    border-bottom: 0;
+    border-radius: $border-rad $border-rad 0 0;
+  }
+}
+
+footer {
+  padding: 2em 0;
+  @include retina-image(images/bg/stars, 1440px 577px);
+
+  a {
+    color: $white-faded;
+
+    &:hover {
+      color: #fff;
+    }
+  }
+
+  ul {
+    margin: 0 auto;
+    list-style: none;
+    text-align: center;
+  }
+
+  li {
+    display: inline-block;
+    margin: 0 1em;
+
+    &:before {
+      content: "";
+      position: relative;
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      top: -3px;
+      background: $white-faded;
+      border-radius: 50%;
+      margin-right: 1em;
+      margin-left: -1em;
+    }
+
+    &:first-child {
+
+      &:before {
+        display: none;
+      }
+    }
+  }
+}
+
+[class^="icon-"] {
+  $icon-size-w: 91px;
+  $icon-size-h: $icon-size-w;
+
+  display: inline-block;
+  width: $icon-size-w;
+  height: $icon-size-h;
+  @include retina-image(images/bg/moon, 278px 174px);
+  background-color: white;
+  border-radius: 50%;
+  margin: 1em auto 0;
+
+  > span {
+    display: block;
+  }
+
+  &[class*="burnout"] {
+    @include retina-image(images/icon/burnout, $icon-size-w $icon-size-h);
+  }
+
+  &[class*="productive"] {
+    @include retina-image(images/icon/productive, $icon-size-w $icon-size-h);
+  }
+
+  &[class*="work"] {
+    @include retina-image(images/icon/work, $icon-size-w $icon-size-h);
+  }
+}

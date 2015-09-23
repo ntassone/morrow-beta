@@ -1,5 +1,5 @@
 $font: 'Muli', 'Helvetica Neue', sans-serif;
-$font-size: 20px;
+$font-size: 18px;
 $font-thin: 200;
 $font-light: 300;
 $font-regular: 400;
@@ -9,11 +9,10 @@ $font-bold: 600;
 $orange: #FF7D3B;
 $orange-text: #DF6020;
 $yellow: #FFCD00;
-$green: #17F06D;
+$green: darken(#17F06D, 5%);
 $purple-text: #8C8CCC;
 $blue-text: #47AECC;
 $white-faded: fade-out(#fff, .5);
-
 
 $color-text: #fff;
 $color-link: fade-out(white, .5);
