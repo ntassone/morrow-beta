@@ -1,6 +1,6 @@
-# Nude
+# Morrow Beta site
 
-Naked project using:
+Project uses:
 
 - Node
   - Express
@@ -9,3 +9,10 @@ Naked project using:
   - Bourbon
   - Neat
 - Browser Sync
+
+## To run:
+
+```
+npm install
+gulp
+```

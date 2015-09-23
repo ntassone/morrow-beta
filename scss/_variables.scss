@@ -1,4 +1,4 @@
-$font: 'Asap', 'Helvetica Neue', sans-serif;
+$font: 'Muli', 'Helvetica Neue', sans-serif;
 $font-size: 20px;
 $font-thin: 200;
 $font-light: 300;
@@ -12,6 +12,7 @@ $yellow: #FFCD00;
 $green: #17F06D;
 $purple-text: #8C8CCC;
 $blue-text: #47AECC;
+$white-faded: fade-out(#fff, .5);
 
 
 $color-text: #fff;
@@ -19,3 +20,6 @@ $color-link: fade-out(white, .5);
 $color-background: #24242A;
 
 $border-rad: 6px;
+
+//Grid
+$max-width: em(700);

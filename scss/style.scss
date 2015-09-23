@@ -9,7 +9,6 @@ html, body {
 }
 
 body {
-  margin: 0;
   background: $color-background;
   font-family: $font;
   font-size: $font-size;
@@ -19,14 +18,113 @@ body {
 
 * {
   box-sizing: border-box;
+  webkit-font-smoothing: antialiased;
 }
 
 img {
   max-width: 100%;
 }
 
+p {
+  font-weight: 100;
+}
+
 //Styles
 
-body {
-
+.wrapper {
+  @include outer-container;
 }
+
+.logo {
+  font-weight: 100;
+
+  > span {
+    color: $orange;
+  }
+}
+
+.hero {
+  @include retina-image(images/bg/hero, 1440px 577px);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+
+  header {
+    text-align: center;
+    padding-top: 3em;
+
+    h1 {
+      margin: 0;
+    }
+
+    #site-id {
+      text-shadow: 0 4px 9px fade-out(#000, .65);
+      letter-spacing: .25em;
+      font-size: 3em;
+    }
+
+    h4 {
+      margin: 0;
+      font-size: 1em;
+      color: $white-faded;
+      font-weight: 100;
+    }
+  }
+}
+
+.morrow-anim {
+  @include span-columns(6);
+  @include shift(3);
+  margin-top: 2em;
+  margin-bottom: 2em;
+
+  .msg {
+    margin-top: 1em;
+    margin-bottom: 1em;
+    display: inline-block;
+    clear: both;
+    float: left;
+    font-size: .9em;
+
+    &.to {
+      float: left;
+      background: $orange;
+    }
+
+    &.from {
+      float: right;
+    }
+
+    &.from,
+    &.project {
+      background: fade-out(#fff, .8);
+    }
+
+
+
+  }
+}
+
+.sign-up {
+  @include linear-gradient(to right, #27283A, #303632);
+
+  input,
+  button {
+    font-size: 1em;
+  }
+}
+
+input[type="text"],
+input[type="email"] {
+  background: none;
+  border: 0;
+  border-bottom: 1px solid fade-out(#fff, .8);
+}
+
+button {
+  background: $green;
+  -webkit-appearance: none;
+  border: 0;
+  border-radius: $border-rad;
+  color: white;
+}
+
