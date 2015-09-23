@@ -43,6 +43,13 @@ p {
   }
 }
 
+h4 {
+  margin: 0;
+  font-size: 1em;
+  color: $white-faded;
+  font-weight: 100;
+}
+
 .hero {
   @include retina-image(images/bg/hero, 1440px 577px);
   background-attachment: fixed;
@@ -61,13 +68,6 @@ p {
       text-shadow: 0 4px 9px fade-out(#000, .65);
       letter-spacing: .25em;
       font-size: 3em;
-    }
-
-    h4 {
-      margin: 0;
-      font-size: 1em;
-      color: $white-faded;
-      font-weight: 100;
     }
   }
 }
@@ -177,7 +177,6 @@ button {
   }
 
   header {
-    font-size: $font-size/1.25;
     text-align: center;
     margin: .5em 0 2em 0;
 
@@ -185,10 +184,12 @@ button {
       margin: 0;
     }
 
-    h3 {
-      font-weight: $font-light;
+    h2 {
+      font-size: $font-size*1.3;
+    }
+
+    h4 {
       margin-top: .25em;
-      color: $white-faded;
     }
   }
 

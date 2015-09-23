@@ -55,6 +55,13 @@ p {
   color: #FF7D3B;
 }
 
+h4 {
+  margin: 0;
+  font-size: 1em;
+  color: rgba(255, 255, 255, 0.5);
+  font-weight: 100;
+}
+
 .hero {
   background-image: url("images/bg/hero.png");
   background-attachment: fixed;
@@ -82,13 +89,6 @@ p {
   text-shadow: 0 4px 9px rgba(0, 0, 0, 0.35);
   letter-spacing: .25em;
   font-size: 3em;
-}
-
-.hero header h4 {
-  margin: 0;
-  font-size: 1em;
-  color: rgba(255, 255, 255, 0.5);
-  font-weight: 100;
 }
 
 .morrow-anim {
@@ -230,7 +230,6 @@ button {
 }
 
 .sign-up header {
-  font-size: 14.4px;
   text-align: center;
   margin: 0.5em 0 2em 0;
 }
@@ -239,10 +238,12 @@ button {
   margin: 0;
 }
 
-.sign-up header h3 {
-  font-weight: 300;
+.sign-up header h2 {
+  font-size: 23.4px;
+}
+
+.sign-up header h4 {
   margin-top: .25em;
-  color: rgba(255, 255, 255, 0.5);
 }
 
 .sign-up input[type="email"] {
