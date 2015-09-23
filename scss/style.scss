@@ -47,10 +47,11 @@ p {
   @include retina-image(images/bg/hero, 1440px 577px);
   background-attachment: fixed;
   background-repeat: no-repeat;
+  box-shadow: inset 0 -50px 50px fade-out(black, .85);
 
   header {
     text-align: center;
-    padding-top: 3em;
+    padding-top: 2em;
 
     h1 {
       margin: 0;
