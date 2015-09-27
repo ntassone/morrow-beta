@@ -1,5 +1,6 @@
 @import "dependencies/dependencies";
 @import "variables";
+@import "animation";
 
 //Setup
 
@@ -47,7 +48,7 @@ h4 {
   margin: 0;
   font-size: 1em;
   color: $white-faded;
-  font-weight: 100;
+  font-weight: $font-light;
 }
 
 .hero {
@@ -76,84 +77,96 @@ h4 {
   @include span-columns(6);
   @include shift(3);
   margin-top: 2em;
-  margin-bottom: 2em;
+  padding-bottom: 2em;
+  // overflow: visible;
+  // overflow-y: hidden;
 
   .msg {
-    position: relative;
-    margin-top: 1em;
-    margin-bottom: 1em;
-    display: inline-block;
-    clear: both;
-    padding: .5em .7em;
-    border-radius: $border-rad;
+    @include animated();
+    @include animation-delay(1s);
 
-    &:before,
-    &:after {
-      content: "";
-      display: block;
-      position: absolute;
-      top: 10px;
-    }
-
-    &.to {
-      float: left;
-      background: $orange;
-      font-weight: $font-medium;
-
-      &:before {
-        left: -10px;
-        @include triangle(21px, fade-out($orange, .5), left);
-      }
-    }
-
-    &.from {
-      float: right;
-
-      &:before {
-        right: -10px;
-        @include triangle(21px, fade-out(#aaa, .9), right);
-      }
-    }
-
-    &.from,
-    &.project {
-      background: fade-out(#fff, .9);
-    }
-
-    small {
-      display: block;
-      margin: .2em 0;
-      color: $white-faded;
-
-      &:first-of-type {
-        margin-top: .5em;
-      }
-    }
+    &:nth-child(2) { @include animation-delay(3s); }
+    &:nth-child(3) { @include animation-delay(5s); }
+    &:nth-child(4) { @include animation-delay(6s); }
   }
+}
 
-  .project {
-    padding: 1em;
-    padding-left: 55px;
-    padding-right: 1.5em;
-  }
+.msg {
+  position: relative;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  display: inline-block;
+  clear: both;
+  padding: .5em .7em;
+  border-radius: $border-rad;
 
-  .project-tab {
-    position: absolute;
+  &:before,
+  &:after {
+    content: "";
     display: block;
-    left: 0;
-    width: 40px;
-    height: 30px;
-    padding: 5px 0;
-    text-align: center;
-    @include linear-gradient(to right, darken(saturate($yellow, 25%), 10%), $yellow);
-    border-radius: 0 $border-rad $border-rad 0;
+    position: absolute;
+    top: 10px;
+  }
 
-    > span {
-      display: inline-block;
-      width: 17px;
-      height: 17px;
-      @include retina-image(images/icon/time, 38px 29px);
+  &.to {
+    float: left;
+    background: $orange;
+    font-weight: $font-medium;
+
+    &:before {
+      left: -10px;
+      @include triangle(21px, fade-out($orange, .5), left);
     }
+  }
+
+  &.from {
+    float: right;
+
+    &:before {
+      right: -10px;
+      @include triangle(21px, fade-out(#aaa, .9), right);
+    }
+  }
+
+  &.from,
+  &.project {
+    background: fade-out(#fff, .9);
+  }
+
+  small {
+    display: block;
+    margin: .2em 0;
+    color: $white-faded;
+
+    &:first-of-type {
+      margin-top: .5em;
+    }
+  }
+}
+
+.project {
+  padding: 1em;
+  padding-left: 55px;
+  padding-right: 1.5em;
+  margin-top: 0;
+}
+
+.project-tab {
+  position: absolute;
+  display: block;
+  left: 0;
+  width: 40px;
+  height: 30px;
+  padding: 5px 0;
+  text-align: center;
+  @include linear-gradient(to right, darken(saturate($yellow, 25%), 10%), $yellow);
+  border-radius: 0 $border-rad $border-rad 0;
+
+  > span {
+    display: inline-block;
+    width: 17px;
+    height: 17px;
+    @include retina-image(images/icon/time, 38px 29px);
   }
 }
 
