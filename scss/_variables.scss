@@ -23,4 +23,4 @@ $border-rad: 6px;
 //Grid
 $max-width: em(700);
 
-$break-point: $max-width;
+$mobile: new-breakpoint(max-width 700px);
