@@ -1,6 +1,6 @@
 //Animation
 
-@mixin animated {
+@mixin morrow-animated {
   @include animation-duration(.5s);
   @include animation-fill-mode(both);
   @include animation-name(fade-up);
@@ -16,5 +16,21 @@
   to {
     opacity: 1;
     @include transform(none);
+  }
+}
+
+@keyframes anim {
+  0% {
+    display: none;
+    opacity: 0;
+  }
+  1% {
+    display: block;
+    opacity: 0;
+    @include transform(scale(.8));
+  }
+  100% {
+    opacity: 1;
+    @include transform(scale(1));
   }
 }
