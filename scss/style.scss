@@ -150,6 +150,7 @@ h4 {
 }
 
 .project {
+  width: 100%;
   padding: 1em;
   padding-left: 55px;
   padding-right: 1.5em;
@@ -171,7 +172,7 @@ h4 {
     display: inline-block;
     width: 17px;
     height: 17px;
-    @include retina-image(images/icon/time, 38px 29px);
+    @include retina-image(images/icon/time, 17px 17px);
   }
 }
 
