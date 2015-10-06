@@ -1,7 +1,7 @@
 {
-  "name": "nude",
+  "name": "morrow-beta",
   "version": "0.1.0",
-  "description": "Naked project directory",
+  "description": "Morrow Beta sign up page",
   "main": "index.js",
   "directories": {
     "example": "example"
@@ -12,18 +12,18 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/ntassone/nude"
+    "url": "https://github.com/ntassone/morrow-beta"
   },
   "author": {
     "name": "Nick Tassone",
     "email": "ntassone@gmail.com",
-    "url": "https://github.com/ntassone/nude"
+    "url": "https://nicktassone.com"
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ntassone/nude/issues"
+    "url": "https://github.com/ntassone/morrow-beta/issues"
   },
-  "homepage": "https://github.com/ntassone/nude",
+  "homepage": "https://github.com/ntassone/morrow-beta",
   "devDependencies": {
     "browser-sync": "^2.9.3",
     "gulp": "^3.9.0",
